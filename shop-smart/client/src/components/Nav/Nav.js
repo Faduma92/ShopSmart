@@ -1,10 +1,18 @@
 import React from 'react';
 import { Nav, Navbar, NavbarBrand, NavLink, FormControl, Form, Button} from 'react-bootstrap';
 import logo from "./ShopSmart.png"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function MyNav() {
     return (
-        <div>
+      // <Router>
+      <div>
+
     
  <Navbar bg="light" variant="light">
  <Navbar.Brand href="#home"><img
@@ -15,10 +23,26 @@ function MyNav() {
       />
       Shop Smart</Navbar.Brand>
  <Nav className="mr-auto">
-   <Nav.Link href="#">Electronics</Nav.Link>
+
+ {/* <Switch> */}
+          {/* <Route path="/electronics"> */}
+            <Nav.Link href="#">Electronics</Nav.Link>
+            {/* <Electronics /> */}
+          {/* </Route> */}
+          {/* <Route path="/health"> */}
    <Nav.Link href="#">Health</Nav.Link>
+
+            {/* <Health /> */}
+          {/* </Route> */}
+          {/* <Route path="/beauty"> */}
+
    <Nav.Link href="#">Beauty</Nav.Link>
+            {/* <Beauty /> */}
+          {/* </Route> */}
+        {/* </Switch> */}
+      
  </Nav>
+  
  <Form inline>
 
    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -30,7 +54,8 @@ function MyNav() {
    <Nav.Link href="#pricing">Log In</Nav.Link>
    <Nav.Link href="#pricing">Sign Up</Nav.Link>
 </Navbar>
-</div>
+</div>  
+// </Router>
     )
 }
 

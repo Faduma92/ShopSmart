@@ -10,6 +10,7 @@ import { Card, Button} from 'react-bootstrap';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import logo from './logoipsum.png'
+import './WhatsNew.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,9 +32,9 @@ export default function WhatsNew() {
   
 
   return (
-    <div>
+    <div className="latest-product-area">
     
-      <h3>What's New</h3>
+      <h3 className="section-tittle text-center mb-50">What's New</h3>
     <Grid container className={classes.root} spacing={5}>
       <Grid item xs={12}>
           
@@ -75,7 +76,7 @@ export default function WhatsNew() {
       </Grid>
     </Grid>
 
-    <h3>Just For You</h3>
+    <h3 className="section-tittle text-center mb-50">Just For You</h3>
     <Grid container className={classes.root} spacing={5}>
       <Grid item xs={12}>
           

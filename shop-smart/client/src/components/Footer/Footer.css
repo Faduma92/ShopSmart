@@ -1,0 +1,68 @@
+/* line 6, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_footer.scss */
+.footer-area .footer-pera p {
+    color: #868c98;
+    font-size: 16px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+  }
+  
+  /* line 12, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_footer.scss */
+  .footer-area .footer-pera.footer-pera2 p {
+    padding: 0;
+  }
+  
+  /* line 17, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_footer.scss */
+  .footer-area .footer-tittle h4 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 29px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .footer-padding {
+    padding-top: 150px;
+    padding-bottom: 120px;
+  }
+  
+  @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
+    .footer-padding {
+      padding-top: 150px;
+      padding-bottom: 120px;
+    }
+  }
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
+    .footer-padding {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
+    .footer-padding {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
+    .footer-padding {
+      padding-top: 30px;
+      padding-bottom: 70px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
+    .footer-padding {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+  
