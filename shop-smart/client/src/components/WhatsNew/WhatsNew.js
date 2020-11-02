@@ -74,6 +74,48 @@ export default function WhatsNew() {
         </Paper>
       </Grid>
     </Grid>
+
+    <h3>Just For You</h3>
+    <Grid container className={classes.root} spacing={5}>
+      <Grid item xs={12}>
+          
+        <Grid container justify="center" spacing={spacing}>
+
+
+          
+
+          {[0, 1, 2, 4, 5].map((value) => (
+            <Grid key={value} item>
+              <Paper className={classes.paper} >
+
+  <Card.Img variant="top" src={logo} />
+  <Card.Body>
+    <Card.Title>Product Name</Card.Title>
+    <Card.Text>
+     Price
+    </Card.Text>
+    <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+  </Card.Body>
+  </Paper>
+
+         
+
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+
+      
+      <Grid item xs={12}>
+        <Paper className={classes.control}>
+          <Grid container>
+            
+          </Grid>
+        </Paper>
+      </Grid>
+    </Grid>
     </div>
   );
 }
