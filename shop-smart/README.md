@@ -1,70 +1,69 @@
 # Shop Smart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+- Shop Smart is an online ecommerce platform for buying and selling electronics, health and wellnes, and beauty products. 
+- Our app allows users to exchange goods and services.
+- This app is the perfect online marketplace to buy and sell products.
 
-In the project directory, you can run:
+## Website URL:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Mission statement
+Shop Smart is continually striving to provide the highest quality products and services to individuals for business and personal needs. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Products include :
 
-### `npm test`
+- Electronics
+- Health and Wellness
+- Beauty and Cosmetics
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Logo
 
-### `npm run build`
+![Logo](./client/public/ShopSmart.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Main Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screenshot](./client/public/ShopSmartSS.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Easy to use, Fast Shipping & Secure Online Payments 
+- Products are recommended to you based on previous order
+- All the selected products show up on the Cart page
+- Checkout page shows the total price of all the items
+- Confirmation page displays the Order information & shipping information
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React
+- HTML
+- CSS
+- Bootstrap
+- Javascript, Jquery
+- Express
+- node.js
+- Mongo
+- Mongoose
+- MVC framework
+- CRUD Operations
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## NPM packages used :
 
-## Learn More
+- mongoose
+- express
+- nodemon
+- bootstrap
+- react
+- react-bootstrap
+- react-dom
+- react-mdl
+- react-router-dom
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+Copyright © 2020 | All rights reserved | Shop Smart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
