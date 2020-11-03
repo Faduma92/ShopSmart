@@ -11,6 +11,10 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import logo from './logoipsum.png'
 import './WhatsNew.css'
+import Icon from '@material-ui/core/Icon';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,8 +58,8 @@ export default function WhatsNew() {
      Price
     </Card.Text>
     <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+          <Icon>add_circle</Icon>     
+             </IconButton>
   </Card.Body>
   </Paper>
 
@@ -96,8 +100,8 @@ export default function WhatsNew() {
      Price
     </Card.Text>
     <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+    <Icon>add_circle</Icon>   
+            </IconButton>
   </Card.Body>
   </Paper>
 
