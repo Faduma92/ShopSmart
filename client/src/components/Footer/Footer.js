@@ -10,13 +10,13 @@ function Footer() {
   <div className="footer footer-area footer-padding">
       <Nav className="justify-content-center" activeKey="/home">
     <Nav.Item>
-      <Nav.Link href="/home">Active</Nav.Link>
+      <Nav.Link href="/home">About Us</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="link-1">Link</Nav.Link>
+      <Nav.Link eventKey="link-1">Contact Us</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="link-2">Link</Nav.Link>
+      <Nav.Link eventKey="link-2">Policy</Nav.Link>
     </Nav.Item>
    
   </Nav>

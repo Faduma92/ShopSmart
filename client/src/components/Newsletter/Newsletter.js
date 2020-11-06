@@ -5,7 +5,9 @@ import Img from './Newsletter.png'
 
 var sectionStyle = {
   
-  backgroundImage: `url(${Img})`
+  backgroundImage: `url(${Img})`,
+  backgroundRepeat: "no-repeat"
+
   
 };
 
