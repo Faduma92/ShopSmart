@@ -12,6 +12,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import logo from './logoipsum.png'
 import './WhatsNew.css'
 import Icon from '@material-ui/core/Icon';
+import { useEffect, useState } from 'react';
+
 
 
 
@@ -32,7 +34,39 @@ const useStyles = makeStyles((theme) => ({
 export default function WhatsNew() {
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
+  const [product, setProduct] = useState([]);
+  const [justforyou, setJustforyou] = useState([]);
 
+  function getProducts() {
+    return fetch('/product')
+      .then(data => data.json())
+  }
+
+  useEffect(() => {
+    
+    getProducts()
+      .then(data => {
+
+       const newArray = data.splice(0,5)
+       console.log(data);
+          setProduct(newArray)
+        
+      })
+    
+  }, [])
+
+  useEffect(() => {
+    
+    getProducts()
+      .then(data => {
+
+       const newArray = data.splice(13,16)
+       console.log(data);
+          setJustforyou(newArray)
+        
+      })
+    
+  }, [])
   
 
   return (
@@ -47,15 +81,15 @@ export default function WhatsNew() {
 
           
 
-          {[0, 1, 2, 4, 5].map((value) => (
-            <Grid key={value} item>
+          {product.map((value) => (
+            <Grid key={value._id} item>
               <Paper className={classes.paper} >
 
-  <Card.Img variant="top" src={logo} />
+  <Card.Img variant="top" src={value.productimage} />
   <Card.Body>
-    <Card.Title>Product Name</Card.Title>
+          <Card.Title>{value.productname}</Card.Title>
     <Card.Text>
-     Price
+     $ {value.price}
     </Card.Text>
     <IconButton aria-label="add to favorites">
           <Icon>add_circle</Icon>     
@@ -89,15 +123,15 @@ export default function WhatsNew() {
 
           
 
-          {[0, 1, 2, 4, 5].map((value) => (
-            <Grid key={value} item>
+          {justforyou.map((value) => (
+            <Grid key={value._id} item>
               <Paper className={classes.paper} >
 
-  <Card.Img variant="top" src={logo} />
+  <Card.Img variant="top" src={value.productimage} />
   <Card.Body>
-    <Card.Title>Product Name</Card.Title>
+          <Card.Title>{value.productname}</Card.Title>
     <Card.Text>
-     Price
+     $ {value.price}
     </Card.Text>
     <IconButton aria-label="add to favorites">
     <Icon>add_circle</Icon>   

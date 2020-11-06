@@ -7,13 +7,13 @@ import beauty from './beauty.png'
 function MyCarousel() {
     return (
         <div>
- <Carousel  style={{height: "75vh"}}>
+ <Carousel  style={{height: "60vh"}}>
   <Carousel.Item interval={3000}>
     <img
       className="d-block w-100"
       src={electronics}
       alt="First slide"
-      style={{height: "75vh"}}
+      style={{height: "60vh"}}
     />
     <Carousel.Caption>
       <h3>Electronics</h3>
@@ -25,7 +25,7 @@ function MyCarousel() {
       className="d-block w-100"
       src={health}
       alt="Second slide"
-      style={{height: "75vh"}}
+      style={{height: "60vh"}}
     />
     <Carousel.Caption>
       <h3>Health and Wellness</h3>
@@ -37,7 +37,7 @@ function MyCarousel() {
       className="d-block w-100"
       src={beauty}
       alt="Third slide"
-      style={{height: "75vh"}}
+      style={{height: "60vh"}}
     />
     <Carousel.Caption>
       <h3>Beauty and Cosmetics</h3>
