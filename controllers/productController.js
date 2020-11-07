@@ -17,5 +17,22 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  findElectronics: function (req, res) {
+    console.log(req.body);
+    db.Product.find({categoryname: 'Electronics'})
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(404).json(err))
+  },
+  findHealth: function (req, res) {
+    console.log(req.body);
+    db.Product.find({categoryname: 'Health'})
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(404).json(err))
+  },
+  findBeauty: function (req, res) {
+    console.log(req.body);
+    db.Product.find({categoryname: 'Beauty'})
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(404).json(err))
+  },
 };
-

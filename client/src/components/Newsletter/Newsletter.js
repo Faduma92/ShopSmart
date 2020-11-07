@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./Newsletter.css";
 import Img from "./Newsletter.png";
+import {useState} from 'react'
 
 var sectionStyle = {
   backgroundImage: `url(${Img})`,
@@ -9,6 +10,24 @@ var sectionStyle = {
 };
 
 function Newsletter() {
+  const [itemInput, setItemInput] = useState('');
+
+  function setItem(item) {
+    return fetch('/newsletter', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ item })
+    })
+      .then(data => data.json())
+   }
+
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    setItem(itemInput)
+  };
+
   return (
     <div>
       <Card style={sectionStyle}>
@@ -25,9 +44,9 @@ function Newsletter() {
             Subscribe to our newsletter
           </Card.Text>
           <form action="#">
-            <input type="email" placeholder="Your email here"></input>
+            <input type="email" placeholder="Your email here" onChange={event => setItemInput(event.target.value)} value={itemInput}></input>
 
-            <Button variant="primary">Subscribe</Button>
+            <Button variant="primary" onClick={handleSubmit}>Subscribe</Button>
           </form>
         </Card.Body>
       </Card>
