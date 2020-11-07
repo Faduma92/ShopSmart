@@ -6,6 +6,8 @@ import Footer from './components/Footer/Footer'
 import Electronics from './components/Electronics/Electronics'
 import Health from './components/Health/Health'
 import Beauty from './components/Beauty/Beauty'
+import Aboutus from './components/Aboutus/Aboutus'
+import Cart from './components/Cart/Cart'
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +16,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+
 
 function App() {
   return (
@@ -36,11 +39,18 @@ function App() {
      <Route path="/Beauty">
 <Beauty />
      </Route>
-    
+     <Route path="/Cart">
+<Cart />
+     </Route>
+     
+     <Route path="/Aboutus">
+<Aboutus />
+     </Route>
   
    </Switch>
-   </BrowserRouter>
    <Footer />
+   </BrowserRouter>
+   
 </div>
   );
 }
