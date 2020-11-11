@@ -14,6 +14,7 @@ import "./WhatsNew.css";
 import Icon from "@material-ui/core/Icon";
 import { useEffect, useState } from "react";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -93,6 +94,7 @@ export default function WhatsNew() {
                     <IconButton aria-label="add to favorites">
                       <Icon>add_circle</Icon>
                     </IconButton>
+
                   </Card.Body>
                 </Paper>
               </Grid>
