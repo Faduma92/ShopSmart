@@ -6,16 +6,13 @@ const fs = require('fs');
 
 // This file empties the products collection and inserts the products below
 
-//Read product image data
+// Read product image data
 function readImageData(path) {
   return Buffer.from(fs.readFileSync(path)).toString('base64');
 }
 
-//Mongoose connection
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/Shopsmart"
-);
+// Mongoose connection
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Shopsmart");
 
 const productSeed = [
   {
@@ -26,7 +23,10 @@ const productSeed = [
     price: 19.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/prairie-naturals.png`),
     stockquantity: 200,
-    productCreated: { type: Date, default: Date.now },
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
   },
   {
     skunumber: 100001,
@@ -36,7 +36,10 @@ const productSeed = [
     price: 7.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/omega-alpha.png`),
     stockquantity: 450,
-    productCreated: { type: Date, default: Date.now },
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
   },
   {
     skunumber: 100002,
@@ -46,7 +49,10 @@ const productSeed = [
     price: 17.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/dutchman-honey.png`),
     stockquantity: 300,
-    productCreated: { type: Date, default: Date.now },
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
   },
   {
     skunumber: 100003,
@@ -56,9 +62,11 @@ const productSeed = [
     price: 39.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/vega-sports-protein.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 100004,
     productname: "Kind Snacks Peanut Butter Dark Chocolate Granola Bars 5 Packs",
     categoryname: "Health",
@@ -66,87 +74,95 @@ const productSeed = [
     price: 5.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/granola-bar.png`),
     stockquantity: 200,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 100005,
     productname: "Jamieson Vitamin B2 100mg 100 Tablets",
     categoryname: "Health",
-    productdescription:
-      "Jamieson Vitamin B2 (Riboflavin) 100 mg helps to metabolize amino acids and carbohydrates and promotes a healthy nervous system. It is involved in the synthesis of red blood cells, while also aiding in tissue formation.",
+    productdescription: "Jamieson Vitamin B2 (Riboflavin) 100 mg helps to metabolize amino acids and carbohydrates and promotes a healthy nervous system. It is involved in the synthesis of red blood cells, while also aiding in tissue formation.",
     price: 8.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/jamieson-vitamin-b2.png`),
     stockquantity: 500,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200000,
     productname: "The Soap Works Soap Tea Tree Oil 110g",
     categoryname: "Beauty",
-    productdescription:
-      "An all vegetable soap with famous Australian tea tree oil. Mildly astringent, non-irritating, antiseptic & anti-fungal. Excellent for shaving or shampoo.",
+    productdescription: "An all vegetable soap with famous Australian tea tree oil. Mildly astringent, non-irritating, antiseptic & anti-fungal. Excellent for shaving or shampoo.",
     price: 1.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/tea-tree-soap.png`),
     stockquantity: 1000,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200001,
     productname: "The Soap Works Soap Aloe Vera 110g",
     categoryname: "Beauty",
-    productdescription:
-      "A pure castille soap that is lightly scented. Aloe Vera and Vitamin E added to heal and soothe the skin – a great all-purpose soap.",
+    productdescription: "A pure castille soap that is lightly scented. Aloe Vera and Vitamin E added to heal and soothe the skin – a great all-purpose soap.",
     price: 1.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/aloe-soap.png`),
     stockquantity: 1000,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200002,
     productname: "Andalou Naturals Full Volume Shampoo Lavender & Biotin 340mL",
     categoryname: "Beauty",
-    productdescription:
-      "The Lavender & Biotin Full Volume Shampoo is silicone and sulphate free, and uses Lavender to stimulate the hair follicles and Biotin-B Complex to add essential protein for thicker, fuller hair.",
+    productdescription: "The Lavender & Biotin Full Volume Shampoo is silicone and sulphate free, and uses Lavender to stimulate the hair follicles and Biotin-B Complex to add essential protein for thicker, fuller hair.",
     price: 9.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/naturals-shampoo.png`),
     stockquantity: 200,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200003,
     productname: "Derma E Natural Mineral Oil-Free Sunscreen SPF 30 56g",
     categoryname: "Beauty",
-    productdescription:
-      "Antioxidant Natural Sunscreen SPF 30 Oil-Free Face Lotion helps shield skin from harmful UVA/UVB rays, oxidative damage and premature signs of aging.",
+    productdescription: "Antioxidant Natural Sunscreen SPF 30 Oil-Free Face Lotion helps shield skin from harmful UVA/UVB rays, oxidative damage and premature signs of aging.",
     price: 20.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/derma-sunscreen.png`),
     stockquantity: 200,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200004,
-    productname:
-      "Andalou Naturals Hand Cream Lavender Shea Butter + Cocoa Butter 100mL",
+    productname: "Andalou Naturals Hand Cream Lavender Shea Butter + Cocoa Butter 100mL",
     categoryname: "Beauty",
-    productdescription:
-      "Soothing organic lavender, fair trade shea and cocoa butter absorb quickly, leaving hands nourished, protected, and ready to meet the day.",
+    productdescription: "Soothing organic lavender, fair trade shea and cocoa butter absorb quickly, leaving hands nourished, protected, and ready to meet the day.",
     price: 8.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/naturals-handcream.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 200005,
     productname: "Lily of The Desert 99% Aloe Vera Gelly 342g",
     categoryname: "Beauty",
-    productdescription:
-      "Replenish moisture and hydrate your skin. Aloe vera has been known as nature’s moisturizer for thousands of years, and Lily of the Desert’s 99% Aloe Vera Gelly instantly cools the skin while hydrating at least 3 epidermal layers.",
+    productdescription: "Replenish moisture and hydrate your skin. Aloe vera has been known as nature’s moisturizer for thousands of years, and Lily of the Desert’s 99% Aloe Vera Gelly instantly cools the skin while hydrating at least 3 epidermal layers.",
     price: 11.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/aloe-jelly.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300000,
     productname: "Lenovo IdeaPad 3 15.6 Touchscreen Laptop",
     categoryname: "Electronics",
@@ -154,9 +170,11 @@ const productSeed = [
     price: 699.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/lenovo-laptop.png`),
     stockquantity: 50,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300001,
     productname: "Sony Over-Ear Noise Cancelling Headphones",
     categoryname: "Electronics",
@@ -164,9 +182,11 @@ const productSeed = [
     price: 299.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/sony-headphones.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300002,
     productname: "Sony ZV-1 Wi-Fi 20.1MP 2.9x Optical Zoom Digital Camera",
     categoryname: "Electronics",
@@ -174,9 +194,11 @@ const productSeed = [
     price: 999.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/sony-digital-camera.png`),
     stockquantity: 30,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300003,
     productname: "Bose SoundLink Colour II Splashproof Bluetooth Wireless Speaker",
     categoryname: "Electronics",
@@ -184,9 +206,11 @@ const productSeed = [
     price: 99.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/bose-waterproof-speaker.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300004,
     productname: "Lenovo Smart Clock Essential With Google Assistant",
     categoryname: "Electronics",
@@ -194,9 +218,11 @@ const productSeed = [
     price: 34.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/lenovo-digital-clock.png`),
     stockquantity: 100,
-    productCreated: { type: Date, default: Date.now },
-  },
-  {
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
+  }, {
     skunumber: 300005,
     productname: "Insignia Digital Air Fryer - 5L/5.3QT",
     categoryname: "Electronics",
@@ -204,20 +230,44 @@ const productSeed = [
     price: 69.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/digital-air-fryer.png`),
     stockquantity: 50,
-    productCreated: { type: Date, default: Date.now },
+    productCreated: {
+      type: Date,
+      default: Date.now
+    }
   },
 
 ];
 
 
-db.Product
-  .remove({})
-  .then(() => db.Product.collection.insertMany(productSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+db.Product.remove({}).then(() => db.Product.collection.insertMany(productSeed)).then(data => {
+  console.log(data.result.n + " records inserted!");
+  process.exit(0);
+}).catch(err => {
+  console.error(err);
+  process.exit(1);
+});
+
+const cartSeed = [{
+    useremail: "username@gmail.com",
+    products: []
+  },
+  {
+    useremail: "username2@gmail.com",
+    products: []
+  },
+  {
+    useremail: "username3@gmail.com",
+    products: []
+  },
+  {
+    useremail: "username4@gmail.com",
+    products: []
+  }]
+
+db.Cart.remove({}).then(() => db.Cart.collection.insertMany(cartSeed)).then(data => {
+  console.log(data.result.n + " records inserted!");
+  process.exit(0);
+}).catch(err => {
+  console.error(err);
+  process.exit(1);
+});

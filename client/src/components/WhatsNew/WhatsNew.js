@@ -54,6 +54,35 @@ export default function WhatsNew() {
     });
   }, []);
 
+  // Add to Cart Function
+  const [itemInput, setItemInput] = useState('');
+
+  function addToCart(newCart) {
+    console.log(newCart)
+    return fetch('/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        useremail: "username@gmail.com",
+        products: newCart
+      }
+    })
+      .then(data => data.json())
+  }
+
+  const handleSubmit = (productid) => {
+    console.log(productid)
+    const newCart = product.filter(product => {
+      if (product._id == productid) {
+        return product
+      }
+    })
+    console.log(newCart)
+    addToCart(newCart[0])
+  };
+
   return (
     <div className="latest-product-area">
       <h3 className="section-tittle text-center mb-50">What's New</h3>
@@ -68,7 +97,7 @@ export default function WhatsNew() {
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
-                      <Icon>add_circle</Icon>
+                      <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
                     </IconButton>
                   </Card.Body>
                 </Paper>
@@ -77,7 +106,7 @@ export default function WhatsNew() {
           </Grid>
         </Grid>
 
-        
+
       </Grid>
 
       <h3 className="section-tittle text-center mb-50">Just For You</h3>
@@ -102,7 +131,7 @@ export default function WhatsNew() {
           </Grid>
         </Grid>
 
-        
+
       </Grid>
     </div>
   );
