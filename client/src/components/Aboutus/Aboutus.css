@@ -1,0 +1,36 @@
+.aboutus {
+    border-radius: 30px;
+    display:flex;
+    background: white;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cardstyle {
+    box-shadow: -10px 10px 0px 0px gray;
+    border: 2px solid rgb(39, 39, 83);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 30px;
+    height: 400px;
+    width: 400px;
+    background: white;
+    border-radius: 20px;
+  }
+  
+  .cardstyle a {
+    color: black;
+  }
+  
+  .app {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-style: italic;
+  }
+  

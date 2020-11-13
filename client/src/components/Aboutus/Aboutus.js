@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import "./Aboutus.css";
+import TeamAwesome from "./Aboutusdata";
+import Aboutuscard from "./Aboutuscard";
 
-export default function Aboutus(props) {
-    
-
-    return (
-        <>
-            <h1>About Us</h1>
-        </>
-    )
+function Aboutus() {
+  return (
+    <div className="app">
+      <div className="row">
+        {TeamAwesome.map((team) => (
+          <div className="row">
+            <Aboutuscard
+              name={team.name}
+              linkedin={team.linkedin}
+              github={team.github}
+              image={team.image}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
+export default Aboutus;

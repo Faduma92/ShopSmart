@@ -24,7 +24,7 @@ const productSeed = [
     categoryname: "Health",
     productdescription: "MS. Prairie Naturals Vitamin D3 is made with cholecalciferol, the most readily absorbed form. Be sure you get enough of this low-cost, highly valuable vitamin. You’ll soon feel the difference that Vitamin D makes to your health and happiness.",
     price: 19.99,
-    productimage: readImageData(`${__dirname}/../client/public/assets/img/products/prairie-naturals.png`),
+    productimage: "https://www.healthyplanetcanada.com/media/catalog/product/cache/1/image/275x/9df78eab33525d08d6e5fb8d27136e95/v/i/vit_d3_500_softgels_300ccwb12mb.jpg",
     stockquantity: 200,
     productCreated: { type: Date, default: Date.now },
   },

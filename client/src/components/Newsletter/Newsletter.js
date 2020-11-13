@@ -5,8 +5,9 @@ import Img from "./Newsletter.png";
 import {useState} from 'react'
 
 var sectionStyle = {
-  backgroundImage: `url(${Img})`,
-  backgroundRepeat: "no-repeat",
+ float: "right",
+ width: "50%",
+ height: "30%"
 };
 
 function Newsletter() {
@@ -30,11 +31,14 @@ function Newsletter() {
 
   return (
     <div>
-      <Card style={sectionStyle}>
+      <Card >
         <Card.Body
           className="latest-wrapper lf-padding"
           style={{ padding: "100px" }}
         >
+          <div className="col">
+<img src={Img} style={sectionStyle}/>
+          </div>
           <Card.Title className="latest-area latest-height d-flex align-items-center caption">
             <h3>
               Get our latest <br></br> deals and promotions
