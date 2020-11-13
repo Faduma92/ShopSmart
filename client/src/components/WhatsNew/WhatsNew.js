@@ -55,14 +55,14 @@ export default function WhatsNew() {
 
   return (
     <div className="latest-product-area">
-      <h3 className="section-tittle text-center mb-50">What's New</h3>
-      <Grid container className={classes.root} spacing={5}>
+      <h3 className="section-tittle text-center mb-50" style={{padding: "30px"}}>What's New</h3>
+      <Grid container className={classes.root} spacing={5} style={{paddingBottom: "40px"}}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={spacing}>
             {product.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                  <Card.Img variant="top" src={value.productimage} style={{height: "130px"}}/>
                   <Card.Body>
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
@@ -79,14 +79,14 @@ export default function WhatsNew() {
         
       </Grid>
 
-      <h3 className="section-tittle text-center mb-50">Just For You</h3>
-      <Grid container className={classes.root} spacing={5}>
+      <h3 className="section-tittle text-center mb-50" style={{padding: "30px"}}>Just For You</h3>
+      <Grid container className={classes.root} spacing={5} style={{paddingBottom: "40px"}}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={spacing}>
             {justforyou.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                  <Card.Img variant="top" src={value.productimage} style={{height: "130px"}} />
                   <Card.Body>
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>

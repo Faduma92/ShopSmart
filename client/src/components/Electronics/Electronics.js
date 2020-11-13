@@ -51,7 +51,7 @@ export default function Electronics() {
             {product.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                  <Card.Img variant="top" src={value.productimage} style={{height: "130px"}} />
                   <Card.Body>
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
