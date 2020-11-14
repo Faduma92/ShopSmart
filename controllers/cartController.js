@@ -16,5 +16,8 @@ module.exports = {
   },
   delete: function (req, res) {
     db.Cart.findOneAndDelete({_id: req.params.id}).then((dbModel) => res.json(dbModel)).catch((err) => res.status(404).json(err));
+  },
+  deleteAll: function (req, res) {
+    db.Cart.remove({}).then((dbModel) => res.json(dbModel)).catch((err) => res.status(404).json(err));
   }
 };
