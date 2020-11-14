@@ -58,7 +58,6 @@ export default function WhatsNew() {
   const [itemInput, setItemInput] = useState('');
 
   function addToCart(newCart) {
-    console.log(newCart)
     return fetch('/cart', {
       method: 'POST',
       headers: {
@@ -69,10 +68,12 @@ export default function WhatsNew() {
         skunumber: newCart.skunumber,
         productname: newCart.productname,
         price: newCart.price,
+        stockquantity: 1
       })
 
     })
       .then(data => data.json())
+      .then()
   }
 
   const handleSubmit = (productid) => {

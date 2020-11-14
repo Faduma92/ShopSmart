@@ -19,6 +19,10 @@ const Cartschema = new Schema({
   price: {
     type: Number,
     required: true
+  },
+  stockquantity: {
+    type: Number,
+    required: true
   }
 });
 

@@ -8,6 +8,8 @@ import {
   Row,
   Col
 } from "react-bootstrap";
+import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,11 +26,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Cart(props) {
-
-  const [spacing, setSpacing] = React.useState(10);
-  const classes = useStyles();
   const [cartStorage, setcartStorage] = useState([]);
-  const [justforyou, setJustforyou] = useState([]);
+
 
   function getcartStorages() {
     return fetch("/cart").then((data) => data.json());
@@ -36,14 +35,12 @@ export default function Cart(props) {
 
   useEffect(() => {
     getcartStorages().then((data) => {
-      const newArray = data.splice(0, 5);
-      console.log(data);
-      setcartStorage(newArray);
+      setcartStorage(data);
     });
   }, []);
 
   function removeData(cartId) {
-    window.location.reload(false);
+    window.location.reload();
     return fetch('/cart/' + cartId, {
       method: 'DELETE',
       headers: {
@@ -54,7 +51,7 @@ export default function Cart(props) {
   }
 
   function clearData() {
-    window.location.reload(false);
+    window.location.reload();
     return fetch('/cart' , {
       method: 'DELETE',
       headers: {
@@ -64,7 +61,6 @@ export default function Cart(props) {
       .then(data => data.json())
   }
   
-
   const getTotalSum = (cartStorage) => {
     let totalAmount = 0.00;
     cartStorage.map((value) => (
@@ -97,6 +93,13 @@ export default function Cart(props) {
       <Card.Title>$ {value.price}</Card.Title>
               </Col>
               <Col xs lg="2">
+                <IconButton>
+                <Icon>remove_circle_outline</Icon>
+                </IconButton>
+              <span>{value.stockquantity}</span>
+              <IconButton>
+                <Icon>add_circle_outline</Icon>
+                </IconButton>
               </Col>
               <Col xs lg="2">
                 <Button variant="primary" onClick={() => removeData(value._id)}>Remove</Button>
@@ -120,8 +123,11 @@ export default function Cart(props) {
         <Card.Title>$ {getTotalSum(cartStorage)}</Card.Title>
                     </Col>
                     <Col xs lg="2">
+                    <Card.Title>Total Items: {cartStorage.length}</Card.Title>
+                    </Col>
+                    <Col xs lg="2">
                 <Button variant="primary" onClick={() => clearData()}>Clear Cart</Button>
-              </Col>
+                    </Col>
                   </Row>
                 </Card.Body>
               </Card>
