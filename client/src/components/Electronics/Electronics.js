@@ -1,4 +1,5 @@
-import React from "react";
+import AuthUserContext from '../UserAuthentication/Session/context';
+import React, { useContext } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -26,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Electronics() {
+  const authUser = useContext(AuthUserContext);
+  console.log(authUser.email)
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
   const [product, setProduct] = useState([]);

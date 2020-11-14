@@ -36,7 +36,7 @@ const UserAuth = () => (
     <Route exact path="/">
      
 
- <Home />
+      <Home />
     </Route>
       
     <Route path="/Electronics">

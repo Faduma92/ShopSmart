@@ -6,11 +6,11 @@ import React, { useContext } from 'react';
 
 export default function Home(props) {
   const authUser = useContext(AuthUserContext);
-  console.log(authUser.email);
+    
 
     return (
         <>
-          {authUser && <p>Authenticated</p>}
+      
           <MyCarousel/>
           <WhatsNew/>
           <Newsletter/>
