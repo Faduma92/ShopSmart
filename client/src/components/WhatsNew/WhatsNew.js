@@ -58,7 +58,6 @@ export default function WhatsNew() {
   const [itemInput, setItemInput] = useState('');
 
   function addToCart(newCart) {
-    window.location.reload();
     return fetch('/cart', {
       method: 'POST',
       headers: {

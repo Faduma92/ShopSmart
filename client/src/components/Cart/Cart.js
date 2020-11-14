@@ -40,7 +40,9 @@ export default function Cart(props) {
   }, []);
 
   function removeData(cartId) {
-    window.location.reload();
+    setcartStorage(
+      cartStorage.filter((product) => product._id !== cartId)
+    )
     return fetch('/cart/' + cartId, {
       method: 'DELETE',
       headers: {
@@ -51,7 +53,7 @@ export default function Cart(props) {
   }
 
   function clearData() {
-    window.location.reload();
+    setcartStorage([])
     return fetch('/cart' , {
       method: 'DELETE',
       headers: {
