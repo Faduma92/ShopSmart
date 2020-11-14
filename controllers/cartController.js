@@ -11,14 +11,7 @@ module.exports = {
       res.json(err);
     });
   },
-  // findById: function(req, res) {
-  // db.Cart
-  //     .find({useremail:req.params.id})
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(404).json(err));
-  // },
   findAll: function (req, res) {
-    console.log(req)
     db.Cart.find({}).then((dbModel) => res.json(dbModel)).catch((err) => res.status(404).json(err));
   },
   delete: function (req, res) {

@@ -64,10 +64,13 @@ export default function WhatsNew() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         useremail: "username@gmail.com",
-        products: newCart
-      }
+        skunumber: newCart.skunumber,
+        productname: newCart.productname,
+        price: newCart.price,
+      })
+
     })
       .then(data => data.json())
   }

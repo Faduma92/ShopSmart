@@ -201,8 +201,6 @@ const productSeed = [
   }, {
     skunumber: 300003,
     productname: "Bose SoundLink Colour II Splashproof Bluetooth Wireless Speaker",
-    categoryname: "Electronics",
-    productdescription: "With a compact, splashproof design, this speaker is made to go where you go. And with enough juice per charge for up to 8 hours of listening.",
     price: 99.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/bose-waterproof-speaker.png`),
     stockquantity: 100,
@@ -213,8 +211,6 @@ const productSeed = [
   }, {
     skunumber: 300004,
     productname: "Lenovo Smart Clock Essential With Google Assistant",
-    categoryname: "Electronics",
-    productdescription: "Featuring a 4 screen that shows the time in easy-to-read LED digits, keep track of time all day and night thanks to its night light that provides optimal illumination in dark rooms.",
     price: 34.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/lenovo-digital-clock.png`),
     stockquantity: 100,
@@ -225,8 +221,6 @@ const productSeed = [
   }, {
     skunumber: 300005,
     productname: "Insignia Digital Air Fryer - 5L/5.3QT",
-    categoryname: "Electronics",
-    productdescription: "Enjoy all your favourite fried foods in a healthier way, thanks to this Insignia digital air fryer. This small appliance doesn't require oil when frying.",
     price: 69.99,
     productimage: readImageData(`${__dirname}/../client/public/assets/img/products/digital-air-fryer.png`),
     stockquantity: 50,
@@ -238,6 +232,8 @@ const productSeed = [
 
 ];
 
+const cartSeed = []
+
 
 db.Product.remove({}).then(() => db.Product.collection.insertMany(productSeed)).then(data => {
   console.log(data.result.n + " records inserted!");
@@ -246,23 +242,6 @@ db.Product.remove({}).then(() => db.Product.collection.insertMany(productSeed)).
   console.error(err);
   process.exit(1);
 });
-
-const cartSeed = [{
-    useremail: "username@gmail.com",
-    products: []
-  },
-  {
-    useremail: "username2@gmail.com",
-    products: []
-  },
-  {
-    useremail: "username3@gmail.com",
-    products: []
-  },
-  {
-    useremail: "username4@gmail.com",
-    products: []
-  }]
 
 db.Cart.remove({}).then(() => db.Cart.collection.insertMany(cartSeed)).then(data => {
   console.log(data.result.n + " records inserted!");
