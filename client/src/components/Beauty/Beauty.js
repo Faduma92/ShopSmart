@@ -45,6 +45,47 @@ export default function Beauty() {
     });
   }, []);
 
+      // Add to Cart Function
+      function addToCart(newCart) {
+        return fetch('/cart', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            useremail: "username@gmail.com",
+            skunumber: newCart.skunumber,
+            productname: newCart.productname,
+            price: newCart.price,
+            stockquantity: 1
+          })
+    
+        })
+          .then(data => data.json())
+      }
+    
+      const handleSubmit = (productid) => {
+        console.log(productid)
+        var newCart = product.filter(product => {
+          if (product._id == productid) {
+            return product
+          }
+        })
+        console.log(newCart)
+        addToCart(newCart[0])
+      };
+  
+      const handleSubmitBtm = (productid) => {
+        console.log(productid)
+        var newCart = justforyou.filter(product => {
+          if (product._id == productid) {
+            return product
+          }
+        })
+        console.log(newCart)
+        addToCart(newCart[0])
+      };
+
   return (
     <div className="latest-product-area">
       <h3 className="section-tittle text-center mb-50">Beauty</h3>
@@ -59,7 +100,7 @@ export default function Beauty() {
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
-                      <Icon>add_circle</Icon>
+                      <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
                     </IconButton>
                   </Card.Body>
                 </Paper>

@@ -1,4 +1,5 @@
-import React from "react";
+// import AuthUserContext from '../UserAuthentication/Session/context';
+import React, { useContext } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -53,6 +54,47 @@ export default function WhatsNew() {
     });
   }, []);
 
+      // Add to Cart Function
+      function addToCart(newCart) {
+        return fetch('/cart', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            useremail: "username@gmail.com",
+            skunumber: newCart.skunumber,
+            productname: newCart.productname,
+            price: newCart.price,
+            stockquantity: 1
+          })
+    
+        })
+          .then(data => data.json())
+      }
+    
+      const handleSubmit = (productid) => {
+        console.log(productid)
+        var newCart = product.filter(product => {
+          if (product._id == productid) {
+            return product
+          }
+        })
+        console.log(newCart)
+        addToCart(newCart[0])
+      };
+  
+      const handleSubmitBtm = (productid) => {
+        console.log(productid)
+        var newCart = justforyou.filter(product => {
+          if (product._id == productid) {
+            return product
+          }
+        })
+        console.log(newCart)
+        addToCart(newCart[0])
+      };
+
   return (
     <div className="latest-product-area">
       <h3 className="section-tittle text-center mb-50">What's New</h3>
@@ -67,7 +109,7 @@ export default function WhatsNew() {
                     <Card.Title>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
-                      <Icon>add_circle</Icon>
+                      <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
                     </IconButton>
                   </Card.Body>
                 </Paper>

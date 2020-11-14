@@ -193,6 +193,28 @@ const productSeed = [
     productCreated: { type: Date, default: Date.now },
   },
 ];
+
+const cartSeed = [{
+  useremail: "username@gmail.com",
+  products: []
+},
+{
+  useremail: "username1@gmail.com",
+  products: []
+},
+{
+  useremail: "username2@gmail.com",
+  products: []
+},
+{
+  useremail: "username3@gmail.com",
+  products: []
+},
+{
+  useremail: "username5@gmail.com",
+  products: []
+},]
+
 db.Product
   .remove({})
   .then(() => db.Product.collection.insertMany(productSeed))
@@ -201,6 +223,14 @@ db.Product
     process.exit(0);
   })
   .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Cart.remove({}).then(() => db.Cart.collection.insertMany(cartSeed)).then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  }).catch(err => {
     console.error(err);
     process.exit(1);
   });
