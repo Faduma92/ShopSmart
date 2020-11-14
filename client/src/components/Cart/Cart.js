@@ -72,13 +72,6 @@ export default function Cart(props) {
   return (
     <div>
       <h1 className="text-center">Cart</h1>
-      
-      {cartStorage.length === 0 && (
-        <div>
-          <br/><br/><br/><br/><br/><br/>
-          <h2 className="text-center">Your Cart is Empty</h2>
-        </div>
-      )}
       {
       cartStorage.map((value) => (
         <Container>
@@ -112,6 +105,23 @@ export default function Cart(props) {
     } 
       {cartStorage.length > 0 && (
             <Container>
+              <br/>
+              <Card border="secondary" display="flex">
+                <Card.Body>
+                  <Row >
+                    <Col>
+            <Card.Title>Tax</Card.Title>
+                    </Col>
+                    <Col  md="auto">
+        <Card.Title>$ {(Math.round(getTotalSum(cartStorage) * 0.13 * 100) / 100).toFixed(2)}</Card.Title>
+                    </Col>
+                    <Col xs lg="2">
+                    </Col>
+                    <Col xs lg="2">
+                    </Col>
+                  </Row>
+                </Card.Body>
+              </Card>
             <br/>
               <Card border="secondary" display="flex">
                 <Card.Body>
@@ -120,7 +130,7 @@ export default function Cart(props) {
             <Card.Title>Grand Total</Card.Title>
                     </Col>
                     <Col md="auto">
-        <Card.Title>$ {getTotalSum(cartStorage)}</Card.Title>
+        <Card.Title>$ {(Math.round(getTotalSum(cartStorage) * 1.13 * 100) / 100).toFixed(2)}</Card.Title>
                     </Col>
                     <Col xs lg="2">
                     <Card.Title>Total Items: {cartStorage.length}</Card.Title>
@@ -132,6 +142,12 @@ export default function Cart(props) {
                 </Card.Body>
               </Card>
           </Container>
+      )}
+      {cartStorage.length == 0 && (
+        <div>
+          <br/><br/><br/><br/><br/><br/>
+          <h2 className="text-center">Your Cart is Empty</h2>
+        </div>
       )}
     </div>
   )
