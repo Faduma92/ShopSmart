@@ -8,6 +8,11 @@ import Health from './components/Health/Health'
 import Beauty from './components/Beauty/Beauty'
 import Aboutus from './components/Aboutus/Aboutus'
 import Cart from './components/Cart/Cart'
+import SignInPage from './components/UserAuthentication/SignIn';
+import SignUpPage from './components/UserAuthentication/SignUp';
+// import SignUpLink from './components/UserAuthentication/SignUp';
+import * as ROUTES from './components/UserAuthentication/constants/routes';
+import UserAuthentication from './components/UserAuthentication/UserAuthentication'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +21,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import SignOut from './components/UserAuthentication/SignOut';
 
 
 function App() {
@@ -30,6 +36,7 @@ function App() {
 
   <Home />
      </Route>
+       
      <Route path="/Electronics">
 <Electronics />
      </Route>
@@ -46,6 +53,18 @@ function App() {
      <Route path="/Aboutus">
 <Aboutus />
      </Route>
+     
+     <Route path="/Login">
+          <SignInPage />
+     </Route>
+
+     <Route path="/Signup">
+          <SignUpPage />
+     </Route>
+     <Route path="/Signout">
+          <SignOut />
+     </Route>
+
   
    </Switch>
    <Footer />
