@@ -1,5 +1,5 @@
-import AuthUserContext from '../UserAuthentication/Session/context';
-import React, { useContext } from 'react';
+import AuthUserContext from "../UserAuthentication/Session/context";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import FormLabel from "@material-ui/core/FormLabel";
@@ -28,11 +28,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Electronics() {
   const authUser = useContext(AuthUserContext);
-  console.log(authUser.email)
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
   const [product, setProduct] = useState([]);
-  const [justforyou, setJustforyou] = useState([]);
 
   function getProducts() {
     return fetch("/product/electronics").then((data) => data.json());
@@ -45,6 +43,34 @@ export default function Electronics() {
     });
   }, []);
 
+  // Add to Cart Function
+  function addToCart(newCart) {
+    return fetch("/cart", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        useremail: authUser.email,
+        skunumber: newCart.skunumber,
+        productname: newCart.productname,
+        price: newCart.price,
+        stockquantity: 1,
+      }),
+    }).then((data) => data.json());
+  }
+
+  const handleSubmit = (productid) => {
+    console.log(productid);
+    var newCart = product.filter((product) => {
+      if (product._id == productid) {
+        return product;
+      }
+    });
+    console.log(newCart);
+    addToCart(newCart[0]);
+  };
+
   return (
     <div className="latest-product-area">
       <h3 className="section-tittle text-center mb-50">Electronics</h3>
@@ -54,13 +80,23 @@ export default function Electronics() {
             {product.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                  <Card.Img
+                    variant="top"
+                    src={value.productimage}
+                    style={{ height: "130px" }}
+                  />{" "}
                   <Card.Body>
-                    <Card.Title>{value.productname}</Card.Title>
+                    <Card.Title style={{ fontSize: "14px" }}>
+                      {value.productname}
+                    </Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
-                    <IconButton aria-label="add to favorites">
-                      <Icon>add_circle</Icon>
-                    </IconButton>
+                    {authUser && (
+                      <IconButton aria-label="add to favorites">
+                        <Icon onClick={() => handleSubmit(value._id)}>
+                          add_circle
+                        </Icon>
+                      </IconButton>
+                    )}
                   </Card.Body>
                 </Paper>
               </Grid>

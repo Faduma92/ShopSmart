@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 
+
+
 import { withFirebase } from '../Firebase';
 // import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../constants/routes';
@@ -31,14 +33,32 @@ class SignUpFormBase extends Component {
 
     this.state = { ...INITIAL_STATE };
   }
+
  
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;
+    
+
+
+function createCart(email) {
+  return fetch('/cart', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      useremail: email,
+    })
+  })
+    .then(data => data.json())
+}
+  
  
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        createCart(email);
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
