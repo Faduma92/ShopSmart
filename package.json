@@ -1,5 +1,5 @@
 {
-  "name": "ShopSmart",
+  "name": "shopsmart",
   "version": "1.0.0",
   "description": "ShopSmart",
   "main": "server.js",
@@ -22,7 +22,21 @@
   },
   "dependencies": {
     "express": "^4.16.3",
+    "firebase": "^8.0.2",
     "if-env": "^1.0.4",
-    "mongoose": "^5.10.11"
-  }
+    "mongoose": "^5.10.11",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0",
+    "recompose": "^0.30.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faduma92/ShopSmart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Faduma92/ShopSmart/issues"
+  },
+  "homepage": "https://github.com/Faduma92/ShopSmart#readme"
 }

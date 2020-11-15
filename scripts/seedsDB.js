@@ -2,27 +2,22 @@ const mongoose = require("mongoose");
 const db = require("../models");
 const fs = require('fs');
 // const images = require("../client/public/assets/img/products");
-
-
 // This file empties the products collection and inserts the products below
-
 //Read product image data
 function readImageData(path) {
   return Buffer.from(fs.readFileSync(path)).toString('base64');
 }
-
 //Mongoose connection
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/Shopsmart"
 );
-
 const productSeed = [
   {
     skunumber: 100000,
     productname: "Prairie Naturals Vitamin D3 1000IU 500 Softgels",
     categoryname: "Health",
-    productdescription: "MS. Prairie Naturals Vitamin D3 is made with cholecalciferol, the most readily absorbed form. Be sure you get enough of this low-cost, highly valuable vitamin. You’ll soon feel the difference that Vitamin D makes to your health and happiness.",
+    productdescription: "MS. Prairie Naturals Vitamin D3 is made with cholecalciferol, the most readily absorbed form. Be sure you get enough of this low-cost, highly valuable vitamin. You'll soon feel the difference that Vitamin D makes to your health and happiness.",
     price: 19.99,
     productimage: "https://www.healthyplanetcanada.com/media/catalog/product/cache/1/image/275x/9df78eab33525d08d6e5fb8d27136e95/v/i/vit_d3_500_softgels_300ccwb12mb.jpg",
     stockquantity: 200,
@@ -137,7 +132,7 @@ const productSeed = [
     productname: "Lily of The Desert 99% Aloe Vera Gelly 342g",
     categoryname: "Beauty",
     productdescription:
-      "Replenish moisture and hydrate your skin. Aloe vera has been known as nature’s moisturizer for thousands of years, and Lily of the Desert’s 99% Aloe Vera Gelly instantly cools the skin while hydrating at least 3 epidermal layers.",
+      "Replenish moisture and hydrate your skin. Aloe vera has been known as nature's moisturizer for thousands of years, and Lily of the Desert's 99% Aloe Vera Gelly instantly cools the skin while hydrating at least 3 epidermal layers.",
     price: 11.99,
     productimage: "https://www.healthyplanetcanada.com/media/catalog/product/cache/1/image/275x/9df78eab33525d08d6e5fb8d27136e95/j/e/jelly.jpg",
     stockquantity: 100,
@@ -197,9 +192,28 @@ const productSeed = [
     productimage: "https://multimedia.bbycastatic.ca/multimedia/products/400x400/137/13785/13785659.jpg",    stockquantity: 50,
     productCreated: { type: Date, default: Date.now },
   },
-
 ];
 
+const cartSeed = [{
+  useremail: "username@gmail.com",
+  products: []
+},
+{
+  useremail: "username1@gmail.com",
+  products: []
+},
+{
+  useremail: "username2@gmail.com",
+  products: []
+},
+{
+  useremail: "username3@gmail.com",
+  products: []
+},
+{
+  useremail: "username5@gmail.com",
+  products: []
+},]
 
 db.Product
   .remove({})
@@ -209,6 +223,14 @@ db.Product
     process.exit(0);
   })
   .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Cart.remove({}).then(() => db.Cart.collection.insertMany(cartSeed)).then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  }).catch(err => {
     console.error(err);
     process.exit(1);
   });
