@@ -17,7 +17,6 @@ function MyCarousel() {
           />
           <Carousel.Caption>
             <h3>Electronics</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={3000}>
@@ -29,7 +28,6 @@ function MyCarousel() {
           />
           <Carousel.Caption>
             <h3>Health and Wellness</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -41,9 +39,6 @@ function MyCarousel() {
           />
           <Carousel.Caption>
             <h3>Beauty and Cosmetics</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

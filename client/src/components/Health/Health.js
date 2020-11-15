@@ -31,7 +31,7 @@ export default function Health() {
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
   const [product, setProduct] = useState([]);
-  const [justforyou, setJustforyou] = useState([]);
+  
 
   function getProducts() {
     return fetch("/product/health").then((data) => data.json());
@@ -74,17 +74,7 @@ export default function Health() {
         addToCart(newCart[0])
       };
   
-      const handleSubmitBtm = (productid) => {
-        console.log(productid)
-        var newCart = justforyou.filter(product => {
-          if (product._id == productid) {
-            return product
-          }
-        })
-        console.log(newCart)
-        addToCart(newCart[0])
-      };
-
+      
   return (
     <div className="latest-product-area">
       <h3 className="section-tittle text-center mb-50">Health</h3>
@@ -97,9 +87,13 @@ export default function Health() {
                 <Card.Img variant="top" src={value.productimage} style={{height: "130px"}} />                  <Card.Body>
                     <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
+                    {
+              authUser &&
                     <IconButton aria-label="add to favorites">
                       <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
                     </IconButton>
+                    
+            }
                   </Card.Body>
                 </Paper>
               </Grid>

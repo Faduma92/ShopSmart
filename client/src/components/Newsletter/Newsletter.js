@@ -26,7 +26,9 @@ function Newsletter() {
 
    const handleSubmit = (e) => {
     e.preventDefault();
-    setItem(itemInput)
+    setItem(itemInput);
+    document.getElementById('myInput').value = ''
+
   };
 
   return (
@@ -48,9 +50,9 @@ function Newsletter() {
             Subscribe to our newsletter
           </Card.Text>
           <form action="#">
-            <input type="email" placeholder="Your email here" onChange={event => setItemInput(event.target.value)} value={itemInput}></input>
+            <input type="email" id="myInput" placeholder="Your email here" onChange={event => setItemInput(event.target.value)} value={itemInput}></input>
 
-            <Button variant="primary" onClick={handleSubmit}>Subscribe</Button>
+            <Button variant="primary" onClick={handleSubmit} >Subscribe</Button>
           </form>
         </Card.Body>
       </Card>

@@ -85,7 +85,7 @@ export default function WhatsNew() {
         addToCart(newCart[0])
       };
   
-      const handleSubmitBtm = (productid) => {
+      const handleSubmitBtn = (productid) => {
         console.log(productid)
         var newCart = justforyou.filter(product => {
           if (product._id == productid) {
@@ -109,9 +109,13 @@ export default function WhatsNew() {
                   <Card.Body>
                     <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
+                    {
+              authUser &&
                     <IconButton aria-label="add to favorites">
                       <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
                     </IconButton>
+                    
+            }
                   </Card.Body>
                 </Paper>
               </Grid>
@@ -133,9 +137,13 @@ export default function WhatsNew() {
                   <Card.Body>
                     <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
+                    {
+              authUser &&
                     <IconButton aria-label="add to favorites">
-                      <Icon>add_circle</Icon>
+                      <Icon onClick={() => handleSubmitBtn(value._id)}>add_circle</Icon>
                     </IconButton>
+                    
+            }
                   </Card.Body>
                 </Paper>
               </Grid>

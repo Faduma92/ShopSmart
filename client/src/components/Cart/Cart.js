@@ -136,6 +136,7 @@ export default function Cart(props) {
   return (
     <div>
       <h1 className="text-center">Cart</h1>
+  
       {cartStorage.length > 0 && (
         <Container fluid>
           <br />
@@ -156,7 +157,8 @@ export default function Cart(props) {
             </Card.Body>
           </Card>
         </Container>
-      )}
+      )} 
+
       {cartStorage.map((value) => (
         <Container fluid>
           <br />
@@ -186,7 +188,7 @@ export default function Cart(props) {
             </Card.Body>
           </Card>
         </Container>
-      ))}
+      ))} :
       {cartStorage.length > 0 && (
         <Container fluid>
           <br />
@@ -234,6 +236,8 @@ export default function Cart(props) {
           <h2 className="text-center">Your Cart is Empty</h2>
         </div>
       )}
+
+      
     </div>
   );
 }
