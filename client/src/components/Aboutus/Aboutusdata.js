@@ -1,5 +1,5 @@
 import Sheldonpic from "./Sheldon-2020-1.jpeg";
-import Devontepic from "./Sheldon-2020-1.jpeg";
+import Devontepic from "./devonte-img.JPG";
 import Fadumapic from "./profile.jpeg";
 import Kashyappic from "./Kashyap.jpg";
 import Wilsonpic from "./Wilson.jpg";
@@ -8,7 +8,7 @@ import React from 'react';
 const teamAwesome = [
 {
     name: "Devonte Letts",
-    linkedin:"https:www.linkedin.com/in/",
+    linkedin:"https://www.linkedin.com/in/devonte-letts-profile",
     github:"https://github.com/Duhhvonte",
     image:Devontepic
 },

@@ -1,4 +1,4 @@
-// import AuthUserContext from '../UserAuthentication/Session/context';
+import AuthUserContext from '../UserAuthentication/Session/context';
 import React, { useContext } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function WhatsNew() {
+  const authUser = useContext(AuthUserContext);
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
   const [product, setProduct] = useState([]);
@@ -62,7 +63,7 @@ export default function WhatsNew() {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            useremail: "username@gmail.com",
+            useremail: authUser.email,
             skunumber: newCart.skunumber,
             productname: newCart.productname,
             price: newCart.price,
@@ -97,16 +98,16 @@ export default function WhatsNew() {
 
   return (
     <div className="latest-product-area">
-      <h3 className="section-tittle text-center mb-50">What's New</h3>
-      <Grid container className={classes.root} spacing={5}>
+      <h3 className="section-tittle text-center mb-50" style={{padding: "30px"}}>What's New</h3>
+       <Grid container className={classes.root} spacing={5} style={{paddingBottom: "40px"}}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={spacing}>
             {product.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                <Card.Img variant="top" src={value.productimage} style={{height: "130px"}}/>
                   <Card.Body>
-                    <Card.Title>{value.productname}</Card.Title>
+                    <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
                       <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
@@ -121,16 +122,16 @@ export default function WhatsNew() {
         
       </Grid>
 
-      <h3 className="section-tittle text-center mb-50">Just For You</h3>
-      <Grid container className={classes.root} spacing={5}>
+      <h3 className="section-tittle text-center mb-50" style={{padding: "30px"}}>Just For You</h3>
+       <Grid container className={classes.root} spacing={5} style={{paddingBottom: "40px"}}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={spacing}>
             {justforyou.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
+                <Card.Img variant="top" src={value.productimage} style={{height: "130px"}} />
                   <Card.Body>
-                    <Card.Title>{value.productname}</Card.Title>
+                    <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
                       <Icon>add_circle</Icon>

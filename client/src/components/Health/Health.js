@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Health() {
   const authUser = useContext(AuthUserContext);
-  console.log(authUser.email)
   const [spacing, setSpacing] = React.useState(10);
   const classes = useStyles();
   const [product, setProduct] = useState([]);
@@ -53,7 +52,7 @@ export default function Health() {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            useremail: "username@gmail.com",
+            useremail: authUser.email,
             skunumber: newCart.skunumber,
             productname: newCart.productname,
             price: newCart.price,
@@ -95,9 +94,8 @@ export default function Health() {
             {product.map((value) => (
               <Grid key={value._id} item>
                 <Paper className={classes.paper}>
-                  <Card.Img variant="top" src={value.productimage} />
-                  <Card.Body>
-                    <Card.Title>{value.productname}</Card.Title>
+                <Card.Img variant="top" src={value.productimage} style={{height: "130px"}} />                  <Card.Body>
+                    <Card.Title style={{fontSize: "14px"}}>{value.productname}</Card.Title>
                     <Card.Text>$ {value.price}</Card.Text>
                     <IconButton aria-label="add to favorites">
                       <Icon onClick={() => handleSubmit(value._id)}>add_circle</Icon>
