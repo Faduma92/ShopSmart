@@ -48,6 +48,7 @@ Shop Smart is continually striving to provide the highest quality products and s
 - Mongoose
 - MVC framework
 - CRUD Operations
+- Firebase
 
 ## NPM packages used :
 
@@ -60,6 +61,7 @@ Shop Smart is continually striving to provide the highest quality products and s
 - react-dom
 - react-mdl
 - react-router-dom
+- firebase
   
 
 
