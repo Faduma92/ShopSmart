@@ -2,9 +2,7 @@
 
 ## Description
 
-- Shop Smart is an online ecommerce platform for buying and selling electronics, health and wellnes, and beauty products. 
-- Our app allows users to exchange goods and services.
-- This app is the perfect online marketplace to buy and sell products.
+- Shop Smart is an online ecommerce platform for selling electronics, health and wellness, and beauty products. 
 
 ## Website URL:
 
@@ -46,8 +44,7 @@ Shop Smart is continually striving to provide the highest quality products and s
 - Easy to use, Fast Shipping & Secure Online Payments 
 - Products are recommended to you based on previous order
 - All the selected products show up on the Cart page
-- Checkout page shows the total price of all the items
-- Confirmation page displays the Order information & shipping information
+- Cart page shows the total price of all the items including tax
 
 ## Technologies 
 
@@ -55,31 +52,34 @@ Shop Smart is continually striving to provide the highest quality products and s
 - HTML
 - CSS
 - Bootstrap
-- Javascript, Jquery
+- Javascript
 - Express
-- node.js
+- Node.js
 - Mongo
 - Mongoose
 - MVC framework
 - CRUD Operations
+- Firebase
+- Material UI
+
 
 ## NPM:
 
-- draw.io
-- mongoose
-- express
-- nodemon
-- bootstrap
-- react
-- react-bootstrap
-- react-dom
-- react-mdl
-- react-router-dom
-- firebase
+- Draw.io
+- Mongoose
+- Express
+- Nodemon
+- Bootstrap
+- React
+- React-bootstrap
+- React-dom
+- React-mdl
+- React-router-dom
+- Firebase
 
 ## Installation
 
->To enter seeds into your database:
+>To enter seeds into your database, run this command:
 
 ```
 npm run seed
@@ -90,7 +90,7 @@ npm run seed
 ```
 npm i
 ```
->To start server:
+>To start server, run this command:
 
 ```
 npm start

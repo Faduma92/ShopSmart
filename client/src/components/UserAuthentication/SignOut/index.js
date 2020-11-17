@@ -26,7 +26,7 @@ const SignOutButton = ({ firebase }) => {
     firebase.doSignOut();
   }
   return (<Button className="btn-primary" type="button" onClick={handleClick}>
-    Click to Sign Out
+    Sign Out
   </Button>)
 };
  
