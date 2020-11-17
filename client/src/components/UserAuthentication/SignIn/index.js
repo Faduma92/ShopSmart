@@ -5,17 +5,18 @@ import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../constants/routes';
-// import { PasswordForgetLink } from "../PasswordForget"
+import { PasswordForgetForm } from '../PasswordForget/index';
 import Form from 'react-bootstrap/Form'
 import { Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
  
 const SignInPage = () => (
-  <div>
+  <div >
     <h1 className="text-center">Log In</h1>
     <SignInForm />
     {/* <PasswordForgetLink /> */}
-    <SignUpLink />
+    <PasswordForgetForm />
+    
   </div>
 );
  
@@ -63,7 +64,7 @@ class SignInFormBase extends Component {
           <Form.Label column sm={2}>
             Email Address
           </Form.Label>
-          <Col sm={6}>
+          <Col sm={4}>
             <Form.Control  name="email"
           value={email}
           onChange={this.onChange}
@@ -75,7 +76,7 @@ class SignInFormBase extends Component {
           <Form.Label column sm={2}>
             Password
           </Form.Label>
-          <Col sm={6}>
+          <Col sm={4}>
             <Form.Control name="password"
           value={password}
           onChange={this.onChange}
@@ -84,9 +85,10 @@ class SignInFormBase extends Component {
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
-          <Col sm={{ span: 10, offset: 2 }}>
+          <Col sm={{ span: 1, offset: 2 }}>
             <Button disabled={isInvalid} type="submit">Sign in</Button>
           </Col>
+          <SignUpLink />
         </Form.Group>
         {error && <p>{error.message}</p>}
       </Form>
