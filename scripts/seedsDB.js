@@ -196,24 +196,16 @@ const productSeed = [
 
 const cartSeed = [{
   useremail: "username@gmail.com",
-  products: []
+  products: [
+    {
+    skunumber: 300005,
+    productname: "Insignia Digital Air Fryer - 5L/5.3QT",
+    price: 69.99,
+    stockquantity:1
+    }
+  ]
 },
-{
-  useremail: "username1@gmail.com",
-  products: []
-},
-{
-  useremail: "username2@gmail.com",
-  products: []
-},
-{
-  useremail: "username3@gmail.com",
-  products: []
-},
-{
-  useremail: "username5@gmail.com",
-  products: []
-},]
+]
 
 db.Product
   .remove({})
