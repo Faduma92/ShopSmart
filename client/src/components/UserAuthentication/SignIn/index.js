@@ -8,12 +8,17 @@ import * as ROUTES from "../constants/routes";
 import Form from 'react-bootstrap/Form'
 import { Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { PasswordForgetForm, PasswordForgetLink } from '../PasswordForget/index';
+
 
 const SignInPage = () => (
   <div>
     <h1>SignIn</h1>
     <SignInForm />
     <SignUpLink />
+    <PasswordForgetForm />
+    <PasswordForgetLink />
+
   </div>
 );
 

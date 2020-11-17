@@ -24,6 +24,7 @@ import {
 import React, { useState, useEffect } from 'react';
 import SignOut from './components/UserAuthentication/SignOut';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PasswordForgetForm from './components/UserAuthentication/PasswordForget';
 
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
         <Route path="/Aboutus">
           <Aboutus />
         </Route>
+        {/* <Route path="/PASSWORD_FORGET">
+          <PasswordForgetForm />
+        </Route> */}
         <Route path="*">
           <Redirect to="/" />
         </Route>
