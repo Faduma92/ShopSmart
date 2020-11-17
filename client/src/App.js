@@ -10,7 +10,7 @@ import logo from "./logo.svg";
  import Cart from "./components/Cart/Cart";
 import SignInPage from './components/UserAuthentication/SignIn';
 import SignUpPage from './components/UserAuthentication/SignUp';
-// import SignUpLink from './components/UserAuthentication/SignUp';
+import SignUpLink from './components/UserAuthentication/SignUp';
 import * as ROUTES from './components/UserAuthentication/constants/routes';
 import UserAuthentication from './components/UserAuthentication/UserAuthentication'
 import {
@@ -35,6 +35,9 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
         <Route path="/Electronics">
           <Electronics />
         </Route>
@@ -49,9 +52,6 @@ function App() {
         </Route>
         <Route path="/Aboutus">
           <Aboutus />
-        </Route>
-        <Route path="*">
-          <Redirect to="/" />
         </Route>
       </Switch>
       <Footer />

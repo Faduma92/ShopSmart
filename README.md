@@ -12,19 +12,33 @@
 ## Mission statement
 Shop Smart is continually striving to provide the highest quality products and services to individuals for business and personal needs. 
 
-## Products include :
+### Products include :
 
 - Electronics
 - Health and Wellness
 - Beauty and Cosmetics
 
-## Logo
+### Logo
 
 ![Logo](./client/public/ShopSmart.png)
 
-## Main Page
+### Main Page
 
 ![Screenshot](./client/public/ShopSmartSS.png)
+
+## Table of contents
+
+* [Features](#features)
+
+* [Technologies Used](#technologies)
+
+* [NPM Packages](#NPM)
+
+* [Installation](#installation)
+
+* [Questions](#questions)
+
+* [License](#license)
 
 
 ## Features
@@ -35,7 +49,7 @@ Shop Smart is continually striving to provide the highest quality products and s
 - Checkout page shows the total price of all the items
 - Confirmation page displays the Order information & shipping information
 
-## Technologies used
+## Technologies 
 
 - React
 - HTML
@@ -49,8 +63,9 @@ Shop Smart is continually striving to provide the highest quality products and s
 - MVC framework
 - CRUD Operations
 
-## NPM packages used :
+## NPM:
 
+- draw.io
 - mongoose
 - express
 - nodemon
@@ -60,8 +75,30 @@ Shop Smart is continually striving to provide the highest quality products and s
 - react-dom
 - react-mdl
 - react-router-dom
-  
+- firebase
 
+## Installation
+
+>To enter seeds into your database:
+
+```
+npm run seed
+```
+
+>To install the needed dependencies, run this command:
+
+```
+npm i
+```
+>To start server:
+
+```
+npm start
+```
+
+## Questions
+
+If you have any questions, please open an issue or contact [Devonte Letts](https://github.com/Duhhvonte), [Faduma Abdillahi](https://github.com/Faduma92), [Kashyap Aghera](https://github.com/kaghera), [Sheldon Mall](https://github.com/sheldonmall), [Wilson Ruan](https://github.com/wilsonruan).  
 
 ## License
 

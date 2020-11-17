@@ -2,6 +2,7 @@ import React from 'react';
 // import AuthUserContext from '../Session/context';
  
 import { withFirebase } from '../Firebase';
+import { Button } from 'react-bootstrap';
 
 // function clearCart(email) {
 //   return fetch('/cart/delete', {
@@ -24,9 +25,9 @@ const SignOutButton = ({ firebase }) => {
     // clearCart(authUser.email);
     firebase.doSignOut();
   }
-  return (<button type="button" onClick={handleClick}>
+  return (<Button className="btn-primary" type="button" onClick={handleClick}>
     Click to Sign Out
-  </button>)
+  </Button>)
 };
  
 export default withFirebase(SignOutButton);

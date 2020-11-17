@@ -11,7 +11,7 @@ import * as ROUTES from '../constants/routes';
  
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h1 className="text-center">Sign Up</h1>
     <SignUpForm />
     {/* <FirebaseContext.Consumer>
       {firebase => <SignUpForm firebase={firebase} />}
@@ -88,7 +88,7 @@ function createCart(email) {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className="text-center" onSubmit={this.onSubmit}>
         <input
           name="username"
           value={username}
@@ -117,7 +117,7 @@ function createCart(email) {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
+        <button disabled={isInvalid} type="submit" >Sign Up</button>
  
         {error && <p>{error.message}</p>}
       </form>
@@ -126,7 +126,7 @@ function createCart(email) {
 }
  
 const SignUpLink = () => (
-  <p>
+  <p className="text-center"> 
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );

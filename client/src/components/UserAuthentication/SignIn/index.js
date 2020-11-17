@@ -5,11 +5,16 @@ import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../constants/routes';
+// import { PasswordForgetLink } from "../PasswordForget"
+import Form from 'react-bootstrap/Form'
+import { Row, Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
  
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <h1 className="text-center">Log In</h1>
     <SignInForm />
+    {/* <PasswordForgetLink /> */}
     <SignUpLink />
   </div>
 );
@@ -53,27 +58,38 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
  
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
+      <Form  className="text-center" onSubmit={this.onSubmit} >
+        <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+            Email Address
+          </Form.Label>
+          <Col sm={6}>
+            <Form.Control  name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
+          placeholder="youremail@email.com" />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} controlId="formHorizontalPassword">
+          <Form.Label column sm={2}>
+            Password
+          </Form.Label>
+          <Col sm={6}>
+            <Form.Control name="password"
           value={password}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
- 
+          placeholder="Password" />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Col sm={{ span: 10, offset: 2 }}>
+            <Button disabled={isInvalid} type="submit">Sign in</Button>
+          </Col>
+        </Form.Group>
         {error && <p>{error.message}</p>}
-      </form>
+      </Form>
     );
   }
 }
