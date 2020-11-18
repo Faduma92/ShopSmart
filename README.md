@@ -5,6 +5,7 @@
 - Shop Smart is an online ecommerce platform for selling electronics, health and wellness, and beauty products. 
 
 ## Website URL:
+https://glacial-garden-86471.herokuapp.com/
 
 
 ## Mission statement
